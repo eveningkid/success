@@ -113,20 +113,51 @@
         background-position: center;
       }
 
-      #how-it-works {
-        font-family: 'Merriweather', serif;
-        font-size: 16px;
-        font-weight: 900;
-        font-style: italic;
+      #explanations {
+        display: flex;
+        flex-direction: column-reverse;
         margin-top: 180px;
         padding: 0 10px;
         padding-bottom: 10px;
       }
 
+      #pomodoro {
+        flex: 1;
+        padding: 20px;
+        background: rgb(245, 245, 245);
+        font-family: 'Merriweather', serif;
+        font-weight: 300;
+        border-radius: 8px;
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+
+      #pomodoro img {
+        float: right;
+        max-height: 49px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+      }
+
+      #pomodoro strong {
+        font-weight: 900;
+        font-style: italic;
+      }
+
+      #steps {
+        flex: 2;
+      }
+
+      #how-it-works {
+        font-family: 'Merriweather', serif;
+        font-size: 16px;
+        font-weight: 900;
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+
       .step {
         font-family: 'Merriweather', serif;
-        /* text-align: center; */
-        padding: 0 10px;
         padding-bottom: 20px;
       }
 
@@ -255,7 +286,7 @@
         margin: 0;
       }
 
-      @media (min-width: 600px) {
+      @media (min-width: 700px) {
         #logo {
           font-size: 14px;
           margin-bottom: 4px;
@@ -288,6 +319,19 @@
 
         #cost-sync {
           display: block;
+        }
+
+        #explanations {
+          flex-direction: row;
+        }
+
+        #pomodoro {
+          font-size: 16px;
+          margin-bottom: 0;
+        }
+
+        #pomodoro strong {
+          font-size: 18px;
         }
 
         #how-it-works {
@@ -406,43 +450,57 @@
         <div id="phone"></div>
       </div>
 
-      <div id="how-it-works">How it works</div>
+      <div id="explanations">
+        <div id="steps">
+          <div id="how-it-works">How it works</div>
 
-      <div class="step">
-        <div class="step-headline">
-          <span class="step-strong">1.</span> Set your top 5 daily tasks in a
-          prioritized order
+          <div class="step">
+            <div class="step-headline">
+              <span class="step-strong">1.</span> Set your top 5 daily tasks in
+              a prioritized order
+            </div>
+
+            <div class="step-subtitle">What really needs to get done?</div>
+          </div>
+
+          <div class="step">
+            <div class="step-headline">
+              <span class="step-strong">2.</span> Estimate how much time you
+              need for each
+            </div>
+
+            <div class="step-subtitle">
+              From 1 to 5 Pomodoro cycles, 30 min each
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-headline">
+              <span class="step-strong">3.</span> Time yourself through each
+              task
+            </div>
+
+            <div class="step-subtitle">Go from one task to the other</div>
+          </div>
+
+          <div class="step">
+            <div class="step-headline">
+              <span class="step-strong">4.</span> Review your day
+            </div>
+
+            <div class="step-subtitle">
+              See how you did compared to your estimations
+            </div>
+          </div>
         </div>
 
-        <div class="step-subtitle">What really needs to get done?</div>
-      </div>
+        <div id="pomodoro">
+          <img src="./assets/tomato.png" />
 
-      <div class="step">
-        <div class="step-headline">
-          <span class="step-strong">2.</span> Estimate how much time you need
-          for each
-        </div>
-
-        <div class="step-subtitle">
-          From 1 to 5 Pomodoro cycles, 30 min each
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-headline">
-          <span class="step-strong">3.</span> Time yourself through each task
-        </div>
-
-        <div class="step-subtitle">Go from one task to the other</div>
-      </div>
-
-      <div class="step">
-        <div class="step-headline">
-          <span class="step-strong">4.</span> Review your day
-        </div>
-
-        <div class="step-subtitle">
-          See how you did compared to your estimations
+          <strong>The Pomodoro Technique</strong> “is a time management method
+          which uses a timer to break down work into intervals, traditionally 25
+          minutes in length, separated by short breaks. Each interval is known
+          as a pomodoro.”
         </div>
       </div>
 
