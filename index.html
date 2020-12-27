@@ -2,16 +2,538 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <title>Success Weekly Planner</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+      }
+
+      a {
+        all: unset;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      #wrapper {
+        max-width: 700px;
+        margin: auto;
+        padding: 30px 0;
+      }
+
+      #logo {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+
+      #motto {
+        margin-bottom: 9px;
+      }
+
+      .motto {
+        font-family: 'Merriweather', serif;
+        font-size: 18px;
+        font-weight: 900;
+        font-style: italic;
+        text-align: center;
+      }
+
+      #subtitle {
+        font-family: 'Merriweather', serif;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 300;
+        padding: 0 10px;
+      }
+
+      #download {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 12px;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      #download img {
+        height: 42px;
+        margin-top: 10px;
+      }
+
+      #cost {
+        font-family: 'Merriweather', serif;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        justify-content: center;
+      }
+
+      #cost-headline {
+        font-weight: 900;
+        font-style: italic;
+        margin-bottom: 8px;
+      }
+
+      #cost-sync {
+        font-weight: 300;
+        display: none;
+      }
+
+      #crowd {
+        position: relative;
+        margin-top: 70px;
+        text-align: center;
+      }
+
+      #crowd img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      #phone {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        right: 0;
+        bottom: -130px;
+        background-image: url('assets/iphone.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      #how-it-works {
+        font-family: 'Merriweather', serif;
+        font-size: 16px;
+        font-weight: 900;
+        font-style: italic;
+        margin-top: 180px;
+        padding: 0 10px;
+        padding-bottom: 10px;
+      }
+
+      .step {
+        font-family: 'Merriweather', serif;
+        /* text-align: center; */
+        padding: 0 10px;
+        padding-bottom: 20px;
+      }
+
+      .step-headline {
+        font-size: 14px;
+        font-weight: 900;
+        font-style: italic;
+      }
+
+      .step-subtitle {
+        font-size: 12px;
+        font-weight: 300;
+      }
+
+      .step-strong {
+        font-weight: 900;
+        font-style: italic;
+        font-size: 18px;
+      }
+
+      #slideshow {
+        margin-top: 30px;
+        white-space: nowrap;
+        overflow: scroll;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      #slideshow::-webkit-scrollbar {
+        display: none;
+      }
+
+      #slideshow .slideshow-image {
+        display: inline-block;
+        max-width: 200px;
+      }
+
+      #slideshow .slideshow-image img {
+        max-width: 100%;
+      }
+
+      #footer {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      #final-motto {
+        margin-top: 37px;
+        text-align: center;
+        font-family: 'Merriweather', serif;
+        font-size: 18px;
+        font-weight: 900;
+        font-style: italic;
+      }
+
+      .final-motto {
+      }
+
+      #final-motto img {
+        margin-top: 12px;
+        height: 42px;
+      }
+
+      #walking-group {
+        text-align: center;
+        margin-top: 18px;
+      }
+
+      #walking-group img {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .block {
+        display: flex;
+        flex-direction: column;
+
+        margin: 50px 10px;
+      }
+
+      .block img {
+        border-radius: 8px;
+        max-width: 300px;
+      }
+
+      .block-texts {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Merriweather', serif;
+        margin-top: 20px;
+      }
+
+      .block-headline {
+        font-size: 16px;
+        font-weight: 900;
+        font-style: italic;
+        margin-bottom: 4px;
+      }
+
+      .block-subtitle {
+        font-size: 14px;
+      }
+
+      .block-action {
+        font-weight: 700;
+        font-style: italic;
+        margin-top: 4px;
+        text-decoration: underline;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      footer {
+        padding-top: 30px;
+        text-align: center;
+        font-family: 'Merriweather', serif;
+        font-weight: 300;
+        font-size: 10px;
+      }
+
+      footer a {
+        text-decoration: underline;
+        color: #000000;
+        margin: 0;
+      }
+
+      @media (min-width: 600px) {
+        #logo {
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+
+        .motto {
+          font-size: 35px;
+        }
+
+        #subtitle {
+          font-size: 18px;
+        }
+
+        #download {
+          flex-direction: row;
+          margin-top: 20px;
+        }
+
+        #download img {
+          margin-top: 0;
+        }
+
+        #cost {
+          margin-left: 8px;
+        }
+
+        #cost-headline {
+          margin-bottom: 0;
+        }
+
+        #cost-sync {
+          display: block;
+        }
+
+        #how-it-works {
+          font-size: 18px;
+        }
+
+        .step-headline {
+          font-size: 16px;
+        }
+
+        .step-strong {
+          font-size: 20px;
+        }
+
+        .step-subtitle {
+          font-size: 16px;
+        }
+
+        #slideshow {
+          all: unset;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: row;
+        }
+
+        #slideshow .slideshow-image {
+          all: unset;
+          flex: 1;
+        }
+
+        #slideshow .slideshow-image img {
+          all: unset;
+          max-width: 100%;
+        }
+
+        .block {
+          flex-direction: row-reverse;
+          text-align: left;
+          align-items: center;
+        }
+
+        .block img {
+          margin-left: 30px;
+          max-width: 50%;
+        }
+
+        .block-texts {
+          margin-top: 0;
+          padding: 0;
+        }
+
+        .block-headline {
+          font-size: 18px;
+        }
+
+        .block-subtitle {
+          font-size: 16px;
+        }
+
+        .block-action {
+          font-size: 16px;
+        }
+
+        #footer {
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+        }
+
+        #walking-group {
+          flex: 1;
+        }
+
+        #walking-group img {
+          height: 250px;
+          max-width: 100%;
+        }
+
+        #final-motto {
+          flex: 1;
+          text-align: left;
+          font-size: 35px;
+          margin-right: 30px;
+        }
+
+        #final-motto img {
+          margin-top: 8px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Success Weekly Planner</h1>
+    <div id="wrapper">
+      <div id="logo">SUCCESS</div>
 
-    <ul>
-      <li><a href="mailto:contact@hskexam.com">Contact</a></li>
-      <li><a href="./privacy.html">Privacy Policy</a></li>
-      <li><a href="./tos.html">Terms of Service</a></li>
-    </ul>
+      <div id="motto">
+        <div class="motto">To become one of the Greatest,</div>
+        <div class="motto">you need one of the greatest products.</div>
+      </div>
+
+      <div id="subtitle">
+        Improve your productivity in a few days using the finest techniques.
+      </div>
+
+      <div id="download">
+        <a
+          href="https://apps.apple.com/us/app/success-weekly-planner/id1544852780"
+          target="_blank"
+        >
+          <img src="assets/download.svg" alt="Download app" />
+        </a>
+      </div>
+
+      <div id="crowd">
+        <img src="assets/crowd.png" alt="Famous crowd" />
+        <div id="phone"></div>
+      </div>
+
+      <div id="how-it-works">How it works</div>
+
+      <div class="step">
+        <div class="step-headline">
+          <span class="step-strong">1.</span> Set your top 5 daily tasks in a
+          prioritized order
+        </div>
+
+        <div class="step-subtitle">What really needs to get done?</div>
+      </div>
+
+      <div class="step">
+        <div class="step-headline">
+          <span class="step-strong">2.</span> Estimate how much time you need
+          for each
+        </div>
+
+        <div class="step-subtitle">
+          From 1 to 5 Pomodoro cycles, 30 min each
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-headline">
+          <span class="step-strong">3.</span> Time yourself through each task
+        </div>
+
+        <div class="step-subtitle">Go from one task to the other</div>
+      </div>
+
+      <div class="step">
+        <div class="step-headline">
+          <span class="step-strong">4.</span> Review your day
+        </div>
+
+        <div class="step-subtitle">
+          See how you did compared to your estimations
+        </div>
+      </div>
+
+      <div id="slideshow">
+        <div class="slideshow-image">
+          <img src="./assets/home.png" />
+        </div>
+        <div class="slideshow-image">
+          <img src="./assets/focus.png" />
+        </div>
+        <div class="slideshow-image">
+          <img src="./assets/dark.png" />
+        </div>
+      </div>
+
+      <div class="block">
+        <img src="./assets/pencil-dark-mode.gif" />
+
+        <div class="block-texts">
+          <div class="block-headline">Designed for Apple Pencil</div>
+
+          <div class="block-subtitle">
+            Get all the benefits from a notebook on your iPad.
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <img src="./assets/team.gif" />
+
+        <div class="block-texts">
+          <div class="block-headline">Become a better manager</div>
+
+          <div class="block-subtitle">
+            Track your team's progress and see how they organise their time.
+          </div>
+
+          <div class="block-action" onclick="$crisp.push(['do', 'chat:open']);">
+            Chat with us for Teams
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        <div id="walking-group">
+          <img src="assets/walking-group.png" alt="Walking group" />
+        </div>
+
+        <div id="final-motto">
+          <div class="final-motto">Productivity</div>
+          <div class="final-motto">is one app away.</div>
+
+          <a
+            href="https://apps.apple.com/us/app/success-weekly-planner/id1544852780"
+            target="_blank"
+          >
+            <img src="assets/download.svg" alt="Download app" />
+          </a>
+        </div>
+      </div>
+
+      <footer>
+        <a href="mailto:contact@hskexam.com">Contact</a> /
+        <a href="./privacy.html">Privacy Policy</a> /
+        <a href="./tos.html">Terms of Service</a> / 2020
+      </footer>
+    </div>
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-KP3LT5G3CT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-KP3LT5G3CT');
+    </script>
+
+    <script type="text/javascript">
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = 'ef31cc34-ea0d-4988-9da4-956cdf5e6d15';
+      (function () {
+        d = document;
+        s = d.createElement('script');
+        s.src = 'https://client.crisp.chat/l.js';
+        s.async = 1;
+        d.getElementsByTagName('head')[0].appendChild(s);
+      })();
+    </script>
   </body>
 </html>
