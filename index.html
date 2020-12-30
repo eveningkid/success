@@ -90,7 +90,6 @@
 
       #download {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         margin-top: 12px;
         align-items: center;
@@ -98,12 +97,14 @@
 
       #download img {
         height: 42px;
-        margin-top: 10px;
+        margin-top: 0;
+        margin-left: 5px;
+        margin-right: 5px;
       }
 
       #download img:last-child {
-        width: 126px;
-        height: auto;
+        height: 42px;
+        width: auto;
       }
 
       #cost {
@@ -336,19 +337,7 @@
         }
 
         #download {
-          flex-direction: row;
           margin-top: 20px;
-        }
-
-        #download img {
-          margin-top: 0;
-          margin-left: 5px;
-          margin-right: 5px;
-        }
-
-        #download img:last-child {
-          height: 42px;
-          width: auto;
         }
 
         #cost {
