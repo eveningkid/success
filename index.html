@@ -100,11 +100,23 @@
         margin-top: 0;
         margin-left: 5px;
         margin-right: 5px;
+        filter: grayscale(100%);
       }
 
       #download img:last-child {
         height: 42px;
         width: auto;
+      }
+
+      #featured {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+      }
+
+      #featured img {
+        height: 42px;
       }
 
       #cost {
@@ -482,6 +494,18 @@
           <img
             src="./assets/google-play-badge.png"
             alt="Get it on Google Play"
+          />
+        </a>
+      </div>
+
+      <div id="featured">
+        <a
+          href="https://www.producthunt.com/posts/success-planner?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-success-planner"
+          target="_blank"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=279716&theme=dark"
+            alt="Success Planner - Minimalist iOS/Android app to track daily tasks | Product Hunt"
           />
         </a>
       </div>
