@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success Account</title>
+
+    <meta name="title" content="Success Account" />
+    <meta name="description" content="Sign in or create your Success account" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://eveningkid.com/success/" />
+    <meta property="og:title" content="Success, your weekly planner" />
+    <meta
+      property="og:description"
+      content="Improve your productivity in a few days using the finest techniques."
+    />
+    <meta
+      property="og:image"
+      content="https://eveningkid.com/success/assets/social.png"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://eveningkid.com/success/" />
+    <meta property="twitter:title" content="Success, your weekly planner" />
+    <meta
+      property="twitter:description"
+      content="Improve your productivity in a few days using the finest techniques."
+    />
+    <meta
+      property="twitter:image"
+      content="https://eveningkid.com/success/assets/social.png"
+    />
+
+    <link rel="shortcut icon" type="image/png" href="./assets/icon.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css"
+    />
+
+    <link rel="stylesheet" href="./assets/account.css" />
+  </head>
+  <body>
+    <div id="logo">
+      <img src="./assets/icon.png" />
+    </div>
+
+    <div id="signin-hint">
+      <p class="is-flex is-justify-content-center mt-4">
+        Use the form below to create an account or sign in.
+      </p>
+    </div>
+
+    <section id="firebaseui-auth-container">
+      <div id="loader">
+        <svg height="100%" viewBox="0 0 32 32" width="100%">
+          <circle
+            cx="16"
+            cy="16"
+            fill="none"
+            r="14"
+            stroke-width="4"
+            style="stroke: #000000; opacity: 0.2"
+          ></circle>
+          <circle
+            cx="16"
+            cy="16"
+            fill="none"
+            r="14"
+            stroke-width="4"
+            style="stroke: #000000; stroke-dasharray: 80; stroke-dashoffset: 60"
+          ></circle>
+        </svg>
+      </div>
+    </section>
+
+    <main>
+      <div class="card" id="my-subscription">
+        <header class="card-header">
+          <p class="card-header-title">Your membership</p>
+        </header>
+
+        <div class="card-content">
+          <div class="content">
+            <p>Thank you for being one of our members, it means a lot.</p>
+
+            <p>
+              <strong>To sign in to your account,</strong> open Success and go
+              to your settings, then tap on "Sign in to synchronise".
+              Email/password are the same you used here.
+            </p>
+
+            <p id="subscription-details">
+              Retrieving your membership details...
+            </p>
+
+            <button
+              id="billing-portal-button"
+              class="button is-fullwidth is-small mt-4"
+            >
+              Update or cancel membership
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="subscribe">
+        <section class="products"></section>
+      </div>
+
+      <button class="button is-black is-fullwidth mt-4" id="signout">
+        Sign out
+      </button>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./assets/account.js"></script>
+  </body>
+</html>

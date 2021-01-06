@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+.firebaseui-title {
+  display: none;
+}
+
+main {
+  display: none;
+  margin: auto;
+  max-width: 650px;
+  width: 90vw;
+}
+
+#firebaseui-auth-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 650px;
+  width: 90vw;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+}
+
+.products .product {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.product .card {
+  height: 100%;
+}
+
+#signin-hint,
+#subscribe,
+#my-subscription {
+  display: none;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+}
+
+#logo img {
+  width: 50px;
+  height: 50px;
+}
+
+#loader {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#loader svg {
+  height: 30px;
+  width: 30px;
+  animation: rotating 500ms linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .products {
+    flex-direction: column;
+  }
+
+  .products .product:last-child {
+    margin-top: 20px;
+  }
+}
